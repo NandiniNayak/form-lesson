@@ -1,0 +1,12 @@
+<h1> Add a new blog </h1>
+
+<%# form always makes a post request %>
+<form action="<%=blogs_path %>" method="POST">
+<%# authenticity token to validate on server side %>
+   <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+    <label>title</label>
+    <input type="text" name="blog[title]">
+    <label> content </lable>
+    <input type="text" name="blog[content]">
+    <input type="submit" name="create">
+</form>
