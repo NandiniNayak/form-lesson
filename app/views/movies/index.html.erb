@@ -1,0 +1,8 @@
+<h1> List All movies</h1>
+<ul>
+<% @movies.each do |movie|%>
+    <li>
+        <%= movie["title"]%> :  <%= movie["rating"]%> 
+    </li>
+<% end %>
+</ul>
