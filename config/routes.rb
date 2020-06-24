@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'home#page'
   resources :posts
   # get all the movies
    get "/movies", to:"movies#index", as:"movies"
@@ -9,6 +10,20 @@ Rails.application.routes.draw do
    get "/movies/new", to:"movies#new", as:"new_movie"
   #  show a single movie
    get "/movies/:id", to: "movies#show", as:"movie"
+
+  #  edit form url
+
+  get "/movies/:id/edit", to:"movies#edit", as: "edit_movie"
+
+  patch "/movies/:id", to:"movies#update"
+
+  # create delete route-  challenge
+
+#   put:  will update the entire list of data - title and rating
+#   {title , rating}
+
+#   patch : will updater only the data that requires an update
+# {either title or rating}
 
 
   #  Blog post specific routes
